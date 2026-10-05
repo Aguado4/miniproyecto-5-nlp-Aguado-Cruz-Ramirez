@@ -1,0 +1,7 @@
+variante,precision@5,acierto_fuente,acierto_destino,mrr,algun_relevante,ms,ms por consulta,precision@10,precision@20
+denso (k=5),0.574,0.791,0.922,0.773,0.87,22.132,22.1,,
+denso + reordenamiento,0.53,0.739,0.948,0.71,0.739,1167.198,1167.2,,
+híbrido denso + BM25,0.461,0.652,0.922,0.641,0.739,22.517,22.5,,
+denso con k=10,,0.774,0.887,0.773,0.87,15.237,15.2,0.504,
+denso con k=20,,0.739,0.8,0.773,0.87,15.229,15.2,,0.385
+denso + filtro de metadatos (cota superior),0.922,1.0,0.93,1.0,1.0,15.631,15.6,,

@@ -1,0 +1,2 @@
+codificador,dimensión,segundos de indexado,precision@5,acierto_fuente,acierto_destino,mrr,algun_relevante,ms
+intfloat/multilingual-e5-small,384,97.8,0.574,0.791,0.922,0.773,0.87,22.132
