@@ -1,8 +1,8 @@
 # PLAN - Ejecución por fases
 
 > Estado global: **corpus construido y notebook escrito (51 celdas, 25 de código), sin ejecutar.**
-> Las fichas de destino ya están
-> descargadas y versionadas; falta el notebook y la corrida de referencia.
+> Las fichas de destino ya están descargadas y versionadas; falta la corrida de referencia, que
+> necesita la GPU libre para descargar el modelo de Ollama.
 
 Leyenda: `[ ]` pendiente · `[~]` en curso · `[x]` hecho
 
