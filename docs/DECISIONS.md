@@ -172,6 +172,45 @@ fichas gana el trozo corto. Falta confirmarlo en la corrida de referencia con 8.
 
 ---
 
+## D-507 · Por qué el reordenador empeora: la explicación fácil es falsa
+
+**Estado:** abierta · 2026-10-04
+
+**Contexto.** En la prueba de §8.3 el reordenamiento con *cross-encoder* **empeoró** la precisión
+total (0,530 frente a 0,574 del denso) y costó 53 veces más tiempo. Mejoró las preguntas de hecho
+(0,825 frente a 0,750) y hundió las de experiencia (0,450 frente a 0,800), con el acierto de
+fuente cayendo de 0,791 a 0,739. La explicación que se nos ocurrió primero fue que el modelo está
+entrenado con mMARCO, consultas factuales de buscador, y por eso premiaría pasajes
+enciclopédicos.
+
+**Esa explicación es falsa, y lo comprobamos.** Puntuando con el mismo reordenador 12 trozos de
+ficha y 12 reseñas del destino correcto, para cuatro consultas de hecho y cuatro de experiencia:
+
+| Clase de consulta | Puntaje medio, ficha | Puntaje medio, reseña | Fichas en el top-5 |
+|---|---:|---:|---:|
+| hecho | **−2,28** | −6,00 | 4,75 de 5 |
+| experiencia | −5,39 | **−4,56** | 1,75 de 5 |
+
+El reordenador **distingue la fuente correctamente**: prefiere fichas para hechos y reseñas para
+experiencias. No hay sesgo enciclopédico.
+
+**Lo que sí se ve.** El único caso que rompe el patrón es «¿Qué problemas reportan quienes
+visitaron Teotihuacán?», donde colocó 5 de 5 fichas arriba. Es una pregunta por **polaridad
+negativa**, y el reordenador tiene el mismo punto ciego que el recuperador denso (H1).
+
+**Por qué queda abierta.** Esto explica el desplome de la familia D, pero **no** explica por sí
+solo el de la familia B, donde la comparación controlada dice que debería acertar. La hipótesis
+pendiente es que el daño viene de la **interacción con el conjunto de candidatos**: el reordenador
+solo reordena los 20 que trajo el denso, y si entre ellos hay pocas reseñas del destino correcto,
+lo mejor que puede hacer es promover una ficha. Para resolverlo hace falta medir la composición
+del conjunto de candidatos antes de reordenar, y eso se hará en la corrida de referencia.
+
+**Consecuencia inmediata.** La lectura de §8.3 **no** afirmará la explicación fácil. Se reportará
+lo medido y lo que queda sin explicar, que es lo honesto y además es lo que la retroalimentación
+del MP1 pedía al hablar de profundizar en por qué un modelo más complejo no gana.
+
+---
+
 ## Plantilla para nuevas entradas
 
 ## D-5NN · Título breve
