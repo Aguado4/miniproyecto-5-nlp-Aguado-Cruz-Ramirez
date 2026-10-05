@@ -28,7 +28,7 @@ Leyenda: `[ ]` pendiente · `[~]` en curso · `[x]` hecho
 - [~] 3 Partición en trozos por tipo de documento
 - [~] 4 Embeddings y vector store
 - [~] 5 Recuperador denso con filtros
-- [~] 6 Banco de 24 preguntas con respuesta en metadatos y evaluación medible
+- [~] 6 Banco de 23 preguntas con respuesta en metadatos y evaluación medible
 - [~] 7 El agujero de la polaridad (H1) y el filtro
 - [~] 8 Estudios: tamaño de trozo (H2), codificador, reordenamiento, BM25 (H3)
 
