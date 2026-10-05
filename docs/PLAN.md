@@ -1,6 +1,7 @@
 # PLAN - Ejecución por fases
 
-> Estado global: **corpus construido, notebook por escribir.** Las fichas de destino ya están
+> Estado global: **corpus construido y notebook escrito (51 celdas, 25 de código), sin ejecutar.**
+> Las fichas de destino ya están
 > descargadas y versionadas; falta el notebook y la corrida de referencia.
 
 Leyenda: `[ ]` pendiente · `[~]` en curso · `[x]` hecho
@@ -20,26 +21,26 @@ Leyenda: `[ ]` pendiente · `[~]` en curso · `[x]` hecho
 - [x] Mapeo curado de los 40 destinos a artículos de Wikipedia, con los homónimos resueltos
 - [x] Recolector reanudable con reintentos; 40 de 40 fichas, 131.920 palabras
 - [x] Corpus versionado en `data/fichas_destino.json` con procedencia y licencia
-- [ ] EDA propio de las dos fuentes (longitudes, cobertura por destino, vocabulario)
+- [~] EDA propio de las dos fuentes (longitudes, cobertura por destino, sesgo del índice)
 
 ## Fase 2 - Recuperación (SPEC §3 a §8)
 
-- [ ] 3 Partición en trozos por tipo de documento (H2)
-- [ ] 4 Embeddings, vector store y comparación de dos codificadores con su costo
-- [ ] 5 Recuperador denso
-- [ ] 6 Banco de preguntas con respuesta en metadatos y evaluación medible
-- [ ] 7 El agujero de la polaridad (H1) y el filtro de metadatos
-- [ ] 8 Reordenamiento con cross-encoder y BM25 (H3)
+- [~] 3 Partición en trozos por tipo de documento
+- [~] 4 Embeddings y vector store
+- [~] 5 Recuperador denso con filtros
+- [~] 6 Banco de 24 preguntas con respuesta en metadatos y evaluación medible
+- [~] 7 El agujero de la polaridad (H1) y el filtro
+- [~] 8 Estudios: tamaño de trozo (H2), codificador, reordenamiento, BM25 (H3)
 
 ## Fase 3 - Generación y chatbot (SPEC §9 a §11)
 
-- [ ] 9 Ollama con `llama3.2:3b`; costo por etapa
-- [ ] 10 ChatBot con citas, memoria y fidelidad de la cita
-- [ ] 11 Versión con LangChain
+- [~] 9 Ollama con `llama3.2:3b`; costo por etapa
+- [~] 10 ChatBot con citas, memoria y fidelidad de la cita
+- [~] 11 Versión con LangChain
 
 ## Fase 4 - Cierre (SPEC §12 a §13)
 
-- [ ] 12 Demo en Gradio, con guion de preguntas para el video
+- [~] 12 Demo en Gradio, con guion de preguntas para el video
 - [ ] 13 Conclusiones; `EXPERIMENTS.md`; Restart & Run All
 - [ ] **Grabar el video de 2 minutos** (lo hace el equipo, no el agente)
 

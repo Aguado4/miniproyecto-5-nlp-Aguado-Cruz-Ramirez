@@ -111,12 +111,12 @@ Archivo único: `notebooks/miniproyecto5_restmex_rag.ipynb`
 | 0 | Portada, problema, resultados principales enlazados por sección |
 | 1 | Entorno, semilla, detección de GPU y de Ollama |
 | 2 | **Corpus híbrido**: fichas de Wikipedia y reseñas; EDA propio de los dos |
-| 3 | Partición en trozos: estrategia por tipo de documento (H2) |
-| 4 | *Embeddings* y vector store; comparación de dos codificadores y su costo |
-| 5 | Recuperador denso y búsqueda por similitud |
+| 3 | Partición en trozos: estrategia por tipo de documento |
+| 4 | *Embeddings* y vector store |
+| 5 | Recuperador denso con filtros de metadatos |
 | 6 | **Banco de preguntas y evaluación medible** del recuperador |
-| 7 | **El agujero de la polaridad** (H1) y el recuperador con filtro de metadatos |
-| 8 | Reordenamiento con *cross-encoder* y recuperación híbrida con BM25 (H3) |
+| 7 | **El agujero de la polaridad** (H1) y el recuperador con filtro |
+| 8 | Estudios agrupados: tamaño de trozo (H2), codificador y su costo, reordenamiento con *cross-encoder*, híbrido con BM25 y la prueba de H3 |
 | 9 | El generador: Ollama con `llama3.2:3b`, y costo por etapa |
 | 10 | El chatbot con citas, memoria de conversación y fidelidad de la cita |
 | 11 | Versión con LangChain, para contrastar con el segundo notebook guía |
