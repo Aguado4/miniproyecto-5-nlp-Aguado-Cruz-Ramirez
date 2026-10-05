@@ -1,0 +1,28 @@
+# Miniproyecto 5 - RAG con Ollama sobre un corpus turístico híbrido
+# Probado con Python 3.12 en Windows 11 y en Google Colab.
+
+# --- Corpus ---
+datasets>=2.18
+pandas>=2.0
+requests>=2.31
+
+# --- Recuperación ---
+sentence-transformers>=3.0
+numpy>=1.26
+scikit-learn>=1.3
+
+# --- Generación ---
+ollama>=0.3
+langchain-ollama>=0.2
+langchain-community>=0.3
+langchain-huggingface>=0.1
+
+# --- Interfaz y gráficas ---
+gradio>=4.44
+matplotlib>=3.8
+seaborn>=0.13
+
+# El servidor de Ollama se instala aparte (no es un paquete de Python):
+#   Windows / macOS: https://ollama.com/download
+#   Linux y Colab:   curl -fsSL https://ollama.com/install.sh | sh
+# Modelo usado: llama3.2:3b  ->  ollama pull llama3.2:3b

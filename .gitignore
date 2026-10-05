@@ -1,0 +1,54 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+# El notebook del entregable SÍ se versiona con sus salidas:
+# quien lo evalúa debe poder leer los resultados sin ejecutar nada.
+notebooks/scratch*.ipynb
+notebooks/*ejecutado*.ipynb
+
+# --- Datos y modelos ---
+# El corpus de reseñas se descarga de HuggingFace, no se versiona.
+data/restmex*
+data/*.parquet
+*.pt
+*.pth
+*.bin
+*.safetensors
+# Los embeddings son grandes y se recalculan; no se versionan.
+data/vectorstore*.npy
+data/*.faiss
+
+# Las fichas de destino SÍ se versionan: son el corpus propio de esta entrega
+# y hacen que el notebook corra sin depender de la API de Wikipedia.
+!data/fichas_destino.json
+
+# --- Cachés de librerías ---
+.cache/
+cache/
+lightning_logs/
+gradio_cached_examples/
+flagged/
+
+# --- Resultados: se conservan figuras y métricas ligeras ---
+results/**/*.pkl
+results/**/*.joblib
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editores ---
+.vscode/
+.idea/
+*.swp
+
+# Las métricas ligeras de results/ sí se versionan (respaldan EXPERIMENTS.md)
+!results/metrics/*.csv
