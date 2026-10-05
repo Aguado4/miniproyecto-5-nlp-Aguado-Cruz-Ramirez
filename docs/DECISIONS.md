@@ -132,6 +132,46 @@ puntuar distinto que los cortos. Se mide en §4 y se discute en §6.
 
 ---
 
+## D-506 · El tamaño de trozo sale de medirlo, y contradice la intuición
+
+**Estado:** aceptada · 2026-10-04
+
+**Contexto.** Había que elegir el tamaño de trozo de las fichas. El razonamiento *a priori*, que
+es el que escribimos primero en el SPEC como H2, era que las fichas necesitarían trozos
+**grandes**: un hecho partido a la mitad pierde el contexto que lo hace interpretable, y una ficha
+de Wikipedia está escrita en párrafos largos.
+
+**Hallazgo.** La prueba en CPU de §8.1 lo contradice, y de forma monótona. Con las preguntas de
+hecho (familia A), la precisión@5 fue:
+
+| Palabras por trozo | Solape | Trozos | Precisión@5 |
+|---:|---:|---:|---:|
+| **110** | 20 | 1.467 | **0,975** |
+| 220 | 40 | 744 | 0,875 |
+| 450 | 80 | 369 | 0,825 |
+
+El mecanismo se ve en un ejemplo concreto: con trozos de 220 palabras, la pregunta «¿qué es la
+laguna de Bacalar?» devolvía como primer resultado el párrafo del **censo de población** del
+artículo de Bacalar. El nombre del destino aparece en todos los trozos del artículo, así que
+domina la similitud, y lo que decide el desempate es cuánto *otro* tema arrastra el trozo. Cuanto
+más corto, más puro el tema y menos ruido.
+
+**Decisión.** El valor por omisión es **110 palabras con 20 de solape**, elegido por la medición y
+no por el razonamiento previo. La narrativa de §3 se reescribió para presentar el compromiso y
+remitir a §8.1, en lugar de afirmar una conclusión que los datos no sostienen.
+
+**Alternativas.** Dejar 220 porque «suena razonable»: es exactamente el error que la rúbrica de
+reproducibilidad y la retroalimentación del MP1 («que el equipo pueda justificar la profundidad
+técnica») penalizan.
+
+**Consecuencias.** El índice tiene el doble de documentos (1.467 trozos de ficha en lugar de 744),
+lo que encarece algo el indexado y la memoria del store, a cambio de 0,10 de precisión en las
+preguntas de hecho. H2, tal como la escribimos en el SPEC, **queda refutada** y así se reportará:
+no es que el tamaño óptimo difiera por fuente en la dirección que supusimos, sino que para las
+fichas gana el trozo corto. Falta confirmarlo en la corrida de referencia con 8.000 reseñas.
+
+---
+
 ## Plantilla para nuevas entradas
 
 ## D-5NN · Título breve
